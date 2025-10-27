@@ -1,0 +1,38 @@
+
+
+<form [formGroup]="userForm" (ngSubmit)="submit()">
+    <div class="m-10">
+        <label for="assettype">Assettype:</label>
+        <input id="assettype" type="text" formControlName="assettype">
+        <span *ngIf="userForm.get('assettype')?.invalid && userForm.get('assettype')?.touched" class="error">
+          assettype is required.
+        </span>
+      </div>
+
+      <div class="m-10">
+        <label for="quantity">Auantity:</label>
+        <input id="quantity" type="text" formControlName="quantity">
+        <div *ngIf="userForm.get('quantity')?.invalid && userForm.get('quantity')?.touched" class="error">
+          quantity is required.
+        </div>
+      </div>
+
+      <div class="m-10">
+        <label for="price">Price:</label>
+        <input id="price" type="number" formControlName="price">
+        <div *ngIf="userForm.get('price')?.invalid && userForm.get('price')?.touched" class="error">
+          price is required.
+        </div>
+      </div>
+
+      <div class="m-10">
+        <label for="date">Date:</label>
+        <input id="date" type="date" formControlName="date">
+        <div *ngIf="userForm.get('date')?.invalid && userForm.get('date')?.touched" class="error">
+          date is required.
+        </div>
+      </div>
+
+<button type="submit" [disabled]="userForm.invalid">submit</button>
+
+</form>
