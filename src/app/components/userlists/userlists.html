@@ -1,6 +1,28 @@
-<div class="container">
+<div class="m-top container">
 
-<button type="button" class="btn-primary" (click)="addUser()">Add</button>
+<button type="button" class="btn btn-primary" (click)="addUser()">Add</button>
+<div>
+     <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Assettype</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+        @for(item of userlists; track $index; let i = $index) { 
+            <tbody>
+        <tr>
+            <td>{{item.assettype}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.date}}</td>
+        </tr>
+        </tbody>
+        }
+     </table>
+</div>
 <div class="chartCls">
 <canvas baseChart [data]="barChartData" [options]="barChartOptions" [type]="'bar'"> </canvas>
 </div>

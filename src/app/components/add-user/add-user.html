@@ -1,38 +1,40 @@
 
-
-<form [formGroup]="userForm" (ngSubmit)="submit()">
-    <div class="m-10">
-        <label for="assettype">Assettype:</label>
-        <input id="assettype" type="text" formControlName="assettype">
-        <span *ngIf="userForm.get('assettype')?.invalid && userForm.get('assettype')?.touched" class="error">
-          assettype is required.
-        </span>
-      </div>
-
+<div class="container">
+  <form [formGroup]="userForm" (ngSubmit)="submit()">
       <div class="m-10">
-        <label for="quantity">Auantity:</label>
-        <input id="quantity" type="text" formControlName="quantity">
-        <div *ngIf="userForm.get('quantity')?.invalid && userForm.get('quantity')?.touched" class="error">
-          quantity is required.
+          <label for="assettype" class="form-label">Assettype:</label>
+          <input id="assettype" type="text" class="form-control" formControlName="assettype">
+          <span *ngIf="userForm.get('assettype')?.invalid && userForm.get('assettype')?.touched" class="error">
+            assettype is required.
+          </span>
         </div>
-      </div>
 
-      <div class="m-10">
-        <label for="price">Price:</label>
-        <input id="price" type="number" formControlName="price">
-        <div *ngIf="userForm.get('price')?.invalid && userForm.get('price')?.touched" class="error">
-          price is required.
+        <div class="m-10">
+          <label for="quantity" class="form-label">Quantity:</label>
+          <input id="quantity" type="text" class="form-control" formControlName="quantity">
+          <div *ngIf="userForm.get('quantity')?.invalid && userForm.get('quantity')?.touched" class="error">
+            quantity is required.
+          </div>
         </div>
-      </div>
 
-      <div class="m-10">
-        <label for="date">Date:</label>
-        <input id="date" type="date" formControlName="date">
-        <div *ngIf="userForm.get('date')?.invalid && userForm.get('date')?.touched" class="error">
-          date is required.
+        <div class="m-10">
+          <label for="price" class="form-label">Price:</label>
+          <input id="price" type="number" class="form-control" formControlName="price">
+          <div *ngIf="userForm.get('price')?.invalid && userForm.get('price')?.touched" class="error">
+            price is required.
+          </div>
         </div>
-      </div>
 
-<button type="submit" [disabled]="userForm.invalid">submit</button>
+        <div class="m-10">
+          <label for="date" class="form-label">Date:</label>
+          <input id="date" type="date" class="form-control" formControlName="date">
+          <div *ngIf="userForm.get('date')?.invalid && userForm.get('date')?.touched" class="error">
+            date is required.
+          </div>
+        </div>
 
-</form>
+  <button type="submit" class="btn btn-success" [disabled]="userForm.invalid">submit</button>
+
+
+  </form>
+</div>
